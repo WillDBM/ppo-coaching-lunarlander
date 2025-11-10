@@ -52,3 +52,30 @@ I then compare:
 ---
 
 ## Repository Structure
+
+```text
+ppo-coaching-lunarlander/
+├─ README.md
+├─ requirements.txt
+├─ .gitignore
+│
+├─ src/                     # Core reusable Python modules
+│  ├─ __init__.py
+│  ├─ config.py             # Hyperparameters and configuration
+│  ├─ env_utils.py          # Environment creation and wrappers
+│  ├─ rewards.py            # Coaching reward logic
+│  └─ ppo_tf.py             # PPO agent, buffer, and training utilities
+│
+├─ notebooks/               # Main experiment and visualization notebooks
+│  ├─ 01_env_exploration.ipynb    # Environment setup and random policy exploration
+│  ├─ 02_ppo_baseline.ipynb       # Baseline PPO training (env rewards only)
+│  ├─ 03_ppo_coaching.ipynb       # PPO + coaching rewards training
+│  └─ 04_results_analysis.ipynb   # Comparative analysis, plots, and report visuals
+│
+├─ experiments/             # Saved logs and trained model checkpoints
+│  ├─ baseline_runs/
+│  └─ coaching_runs/
+│
+└─ reports/                 # Documentation and figures for the final report
+   ├─ project_notes.md
+   └─ figures/
