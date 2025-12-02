@@ -1,8 +1,8 @@
-# PPO with Human-Style Coaching Rewards on LunarLanderContinuous-v2
+# PPO with Human-Style Coaching Rewards on LunarLanderContinuous-v3
 
 This repository contains my course project for the **Reinforcement Learning** class at the University of Tennessee, Knoxville (Instructor: Dr. Li).
 
-The goal of this project is to investigate whether adding human-inspired *coaching rewards* can improve the learning efficiency and stability of an agent trained with **Proximal Policy Optimization (PPO)** on the `LunarLanderContinuous-v2` environment from Gymnasium.
+The goal of this project is to investigate whether adding human-inspired *coaching rewards* can improve the learning efficiency and stability of an agent trained with **Proximal Policy Optimization (PPO)** on the `LunarLanderContinuous-v3` environment from Gymnasium.
 
 ---
 
@@ -29,7 +29,7 @@ I then compare:
 
 **Environment**
 
-- `LunarLanderContinuous-v2` (Gymnasium)
+- `LunarLanderContinuous-v3` (Gymnasium)
 - Continuous action space (2D continuous thrust)
 - Environment reward: standard dense/sparse reward defined by the environment.
 
@@ -49,33 +49,4 @@ I then compare:
   - Penalty for large tilt angle.
 - The coaching reward is meant to mimic human feedback that rewards “good partial progress” even before the full landing is successful.
 
----
 
-## Repository Structure
-
-```text
-ppo-coaching-lunarlander/
-├─ README.md
-├─ requirements.txt
-├─ .gitignore
-│
-├─ src/                     # Core reusable Python modules
-│  ├─ __init__.py
-│  ├─ config.py             # Hyperparameters and configuration
-│  ├─ env_utils.py          # Environment creation and wrappers
-│  ├─ rewards.py            # Coaching reward logic
-│  └─ ppo_tf.py             # PPO agent, buffer, and training utilities
-│
-├─ notebooks/               # Main experiment and visualization notebooks
-│  ├─ 01_env_exploration.ipynb    # Environment setup and random policy exploration
-│  ├─ 02_ppo_baseline.ipynb       # Baseline PPO training (env rewards only)
-│  ├─ 03_ppo_coaching.ipynb       # PPO + coaching rewards training
-│  └─ 04_results_analysis.ipynb   # Comparative analysis, plots, and report visuals
-│
-├─ experiments/             # Saved logs and trained model checkpoints
-│  ├─ baseline_runs/
-│  └─ coaching_runs/
-│
-└─ reports/                 # Documentation and figures for the final report
-   ├─ project_notes.md
-   └─ figures/
